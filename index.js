@@ -52,7 +52,6 @@ function InputData(){
   };
   contacts.push(contact);
   var contactString = JSON.stringify(contacts);
-  //console.log(contactString);
   var content = fs.writeFileSync('./data.json', contactString);
 }
 
@@ -64,9 +63,7 @@ function findContact(){
   var contactObj = JSON.parse(contactString);
   //console.log(contactObj);
   for (var i of contactObj){
-  	// console.log(i.name);
   	 for (var j in i){
-  	 	// console.log(i[j].search(partData));
   	 	if (i[j].search(partData)>=0)
   	 		console.log(i);
         return i;
